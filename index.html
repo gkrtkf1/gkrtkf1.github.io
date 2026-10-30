@@ -1,145 +1,964 @@
-<!DOCTYPE htm1> <!-- 문서유형 -->
-<htm1>
-    <head> <!-- 머리말 -->
-        <title> 김태현의 홈페이지 </title>
-        <meta charset="utf-8" /> <!-- utf-8, euc-kr -->
-        <meta name="keywords" content="웹퍼블리싱, 계원, htm1, css" />
-    </head>
-    <body> <!-- 본문 -->
-        <a href="sub2.html" target="_blank">서브페이지</a> <!-- 서브페이지 이동 -->
-        <a href="http://www.naver.com">네이버</a>
-        <a href="https://cafe.naver.com/kwdmd" target="_blank">계원디미디카페</a>
 
-        <img width="100px" height="auto" src="https://hips.hearstapps.com/hmg-prod/images/the-shiba-inu-species-is-looking-at-its-owner-in-royalty-free-image-1656368953.jpg?crop=1xw:0.84335xh;center,top&resize=1200:*" />
-        <img width="100px" height="auto" src="이미지/the-shiba-inu-species-is-looking-at-its-owner-in-royalty-free-image-1656368953.jpg" />
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="디자이너 김태현의 개인 포트폴리오입니다.">
+<title>KIM TAEHYUN | DESIGN PORTFOLIO</title>
 
-        <a href="http://www.naver.com">
-            <img width="100px" height="auto" src="이미지/the-shiba-inu-species-is-looking-at-its-owner-in-royalty-free-image-1656368953.jpg" />
-            </a>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap');
 
-        <시작태그>
-        </종료태그>
-        <독립형태그 />
-        
-        <시작태그 속성="갑">내용</종료태그>
-        <독립형태그 속성="갑" /> 
-        <!-- h1 ~ h6 -->
-        <h1>대한민국</h1>
-          <h2>서울특별시</h2>
-           <h3>영등포구</h3>
-        <h2>경기도</h2>
-           <h3>의왕시</h3>
-           <h3>안양시</h3>
-        <h1>미국</h1>
-        <h1>일본</h1>
+:root {
+  --bg: #ffffff;
+  --black: #171717;
+  --gray: #777777;
+  --line: #e9e9e9;
+  --blue: #4169e1;
+  --light: #f6f7f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: var(--bg);
+  color: var(--black);
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1160px, 88%);
+  margin: auto;
+}
+
+/* HEADER */
+
+header {
+  width: 100%;
+  height: 76px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.93);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* COMMON */
+
+section {
+  padding: 120px 0;
+}
+
+.section-label {
+  font-size: 12px;
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.2;
+}
+
+.section-desc {
+  color: var(--gray);
+  font-size: 15px;
+  margin-top: 16px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 790px;
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 100px;
+}
+
+.hero-top {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 9vw, 112px);
+  line-height: 1.03;
+  letter-spacing: -6px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero-description {
+  margin-top: 35px;
+  font-size: 17px;
+  color: #666;
+  line-height: 1.9;
+}
+
+.hero-bottom {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+
+.hero-bottom p {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.scroll-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* ABOUT */
+
+.about {
+  background: var(--light);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.profile-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #e8eaf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #8b8f9b;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.profile-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text h3 {
+  font-size: 28px;
+  line-height: 1.5;
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+}
+
+.about-text h3 span {
+  color: var(--blue);
+}
+
+.about-text > p {
+  font-size: 15px;
+  color: #777;
+  line-height: 2;
+}
+
+.profile-info {
+  margin-top: 35px;
+  border-top: 1px solid #ddd;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.info-row span:first-child {
+  color: #888;
+}
+
+.info-row span:last-child {
+  font-weight: 600;
+  text-align: right;
+}
+
+/* PHILOSOPHY */
+
+.philosophy {
+  padding: 100px 0;
+}
+
+.philosophy-content {
+  border-left: 3px solid var(--blue);
+  padding-left: 30px;
+}
+
+.philosophy h2 {
+  font-size: clamp(28px, 4vw, 43px);
+  letter-spacing: -1.5px;
+  line-height: 1.5;
+}
+
+.philosophy h2 span {
+  color: var(--blue);
+}
+
+.philosophy p {
+  margin-top: 20px;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* PROJECTS */
+
+.projects {
+  background: var(--light);
+}
+
+.project-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 55px;
+  gap: 20px;
+}
+
+.project-count {
+  font-size: 12px;
+  color: #888;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 30px;
+}
+
+.project-card {
+  display: block;
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background: #e5e7eb;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.04);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9298a3;
+  font-size: 13px;
+  gap: 8px;
+}
+
+.image-placeholder strong {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.project-info h3 {
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.project-info p {
+  font-size: 12px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.project-number {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.skill-card {
+  border: 1px solid var(--line);
+  padding: 30px 22px;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+}
+
+.skill-card .number {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.skill-card h3 {
+  font-size: 19px;
+  margin-top: 30px;
+}
+
+.skill-card p {
+  color: #888;
+  font-size: 12px;
+  margin-top: 10px;
+  line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #171717;
+  color: white;
+}
+
+.contact .section-label {
+  color: #8da7ff;
+}
+
+.contact-title {
+  font-size: clamp(42px, 8vw, 85px);
+  letter-spacing: -4px;
+  line-height: 1.2;
+  margin-top: 25px;
+}
+
+.contact-title span {
+  color: #8da7ff;
+}
+
+.contact-description {
+  color: #aaa;
+  font-size: 15px;
+  margin-top: 25px;
+  line-height: 1.9;
+}
+
+.contact-list {
+  margin-top: 65px;
+  border-top: 1px solid #444;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 23px 0;
+  border-bottom: 1px solid #444;
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  color: #8da7ff;
+}
+
+.contact-item span:first-child {
+  color: #999;
+  font-size: 12px;
+}
+
+.contact-item span:last-child {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 28px 0;
+  background: #171717;
+  border-top: 1px solid #333;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #888;
+  font-size: 11px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 88%;
+  }
+
+  header {
+    height: 65px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 0;
+    padding: 15px 6%;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 13px 0;
+  }
+
+  section {
+    padding: 85px 0;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-bottom {
+    margin-top: 50px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .profile-placeholder {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about-text h3 {
+    font-size: 24px;
+  }
+
+  .project-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-title {
+    letter-spacing: -2px;
+  }
+
+  .contact-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .contact-item span:last-child {
+    text-align: left;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">KIM<span>.</span>TAEHYUN</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="container">
+
+    <p class="hero-top">DESIGNER PORTFOLIO · 2026</p>
+
+    <h1>
+      KIM<br>
+      TAEHYUN<span>.</span>
+    </h1>
+
+    <p class="hero-description">
+      서로 다른 생각을 연결하고, 새로운 가능성을 발견하며<br>
+      공감과 몰입을 통해 더 나은 가치를 만들어 가는<br>
+      디자이너 김태현입니다.
+    </p>
+
+    <div class="hero-bottom">
+      <p>GRAPHIC DESIGN · BRANDING · UI/UX</p>
+      <a href="#about" class="scroll-link">SCROLL TO EXPLORE ↓</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+
+    <p class="section-label">01 / ABOUT ME</p>
+
+    <div class="about-grid">
+
+      <!-- 프로필 사진 넣는 곳 -->
+      <div class="profile-placeholder">
+        <!-- 사진을 넣으려면 아래 주석을 지우고 파일명을 입력하세요.
+        <img src="이미지/profile.jpg" alt="김태현 프로필 사진">
+        -->
+        <div class="image-placeholder">
+          <strong>+</strong>
+          PROFILE IMAGE
+          <span>프로필 사진을 넣어주세요</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+
+        <h3>
+          안녕하세요.<br>
+          <span>디자이너 김태현</span>입니다.
+        </h3>
 
         <p>
-            단어가 모여서 문장, 문장이 모여서 문단
-            한가지 주제를 가지고 있는 문장의 집합
+          저는 디자인을 통해 서로 다른 생각과 가치를 연결하고,
+          새로운 가능성을 발견하는 과정에 관심이 있습니다.
+          <br><br>
+          다양한 관점에 공감하며 문제의 본질을 탐구하고,
+          작은 아이디어도 깊이 있는 몰입을 통해
+          의미 있는 결과물로 발전시키고자 합니다.
+          <br><br>
+          끊임없이 배우고 도전하며 사람들에게
+          새로운 경험과 가치를 전달하는 디자이너로 성장하고 있습니다.
         </p>
 
-        HTML은   뛰어스기,
-        <br /> 줄바꿈을 무시한다
+        <div class="profile-info">
+          <div class="info-row">
+            <span>NAME</span>
+            <span>김태현 / KIM TAEHYUN</span>
+          </div>
 
-        <hr />
+          <div class="info-row">
+            <span>UNIVERSITY</span>
+            <span>계원예술대학교</span>
+          </div>
 
-        <strong>강한 강조</strong>
-        <em>강조</em>
-        <!-- 의미를 부여함 (사용 권장)-->
+          <div class="info-row">
+            <span>MAJOR</span>
+            <span>디지털미디어과</span>
+          </div>
 
-        <b>굵은 글씨</b>
-        <i>기울임 (이텔릭체)</i>
-        <!-- 모양을 부여함 (사용 비권장)-->
+          <div class="info-row">
+            <span>FIELD</span>
+            <span>Graphic · Branding · UI/UX</span>
+          </div>
+        </div>
 
-        <ins>추가 글</ins>
-        <del>삭제 글</del>
-        <!-- 의미를 부여-->
+      </div>
+    </div>
+  </div>
+</section>
 
-        <u>밑 줄</u>
-        <strike>가운데 줄</strike>
-        <!-- 모양을 부여 -->
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container">
 
-        윗첨자<sup>추가되는 설명을 위에 표시</sup>
-        아랫첨자<sub>추가된는 설명을 아래에 표시</sub>
+    <p class="section-label">02 / DESIGN PHILOSOPHY</p>
 
-        <ul>
-            <li>리스트1</li>
-            <li>리스트2</li>
-            <li>리스트2</li>
-        </ul>
+    <div class="philosophy-content">
+      <h2>
+        Different Thoughts,<br>
+        <span>Connected Ideas.</span><br>
+        New Possibilities.
+      </h2>
 
-        <ol>
-            <li>리스트1</li>
-            <li>리스트2</li>
-            <li>리스트2</li>
-        </ol>
-        <dl>
-            <dt>용어</dt>
-            <dt>용어에 대한 설명</dt>
-            <dt>Htper Text Markup Language</dt>
-        </dl>
+      <p>
+        서로 다른 시선이 만나 새로운 가능성이 시작됩니다.
+      </p>
+    </div>
 
-        <style>
-            th, td{
-                border: solid 1px black;
-            }
-        </style>
+  </div>
+</section>
 
-    <table>
-        <tr> <!-- row 행 줄 -->
-            <th rowspan="2">제목1</th> <!-- table header-->
-            <th colspan="2">제목2</th> <!-- colum 열 칸 -->
-            <th>제목3</th>
-        </tr>
-        <tr>
-            <td>내용1</td>
-            <td>내용2</td>
-            <td>내용3</td>
-        </tr>
-        <thead>표제복</thead>
-        <tbody>표본몬</tbody>
-        <troot>표끝</troot>
-    </table>
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
 
-    <div>블록(block)형 구획 나누기</div>
-    <spea>인라인(inline)형 구획 나누기</spea>
-    <!-- 의미 없이 사용하기 좋은 태그-->
+    <div class="project-heading">
+      <div>
+        <p class="section-label">03 / SELECTED WORKS</p>
+        <h2 class="section-title">My Projects.</h2>
+        <p class="section-desc">
+          다양한 아이디어와 시도를 통해 완성한 디자인 프로젝트입니다.
+        </p>
+      </div>
 
-    <form>
-        <lable for="name_1">아이디</lable>
-        <input name="neme_1" type="text" placeho1der="-기호없이 숫자만 입력" />
-        <input type="password" />
+      <p class="project-count">PORTFOLIO / 2026</p>
+    </div>
 
-        <input type="radio" name="p1" checked/>사과
-        <input type="radio" name="p1" />배
-        <input type="radio" name="p1" />딸기
+    <div class="project-grid">
 
-        <input type="radio" name="p2" checked/>가을
-        <input type="radio" name="p2" />겨울
-        <input type="radio" name="p2" />봄
+      <!-- PROJECT 01 -->
+      <a href="#contact" class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <strong>01</strong>
+            PROJECT IMAGE
+            <span>이미지 삽입 공간</span>
+          </div>
+          <!--
+          <img src="이미지/project01.jpg" alt="잘가계 프로젝트">
+          -->
+        </div>
 
-        <input type="checkbox"/>봄
-        <input type="checkbox"/>여름
-        <input type="checkbox"/>가을
-        <input type="checkbox"/>겨울
+        <div class="project-info">
+          <div>
+            <h3>잘가계</h3>
+            <p>BRANDING · SERVICE DESIGN</p>
+          </div>
+          <span class="project-number">01 / 04</span>
+        </div>
+      </a>
 
-        <select> <!--selact box,combo box -->
-          <option>네이버</option>
-          <option>구글</option>
-          <option>계원</option>
-        </select>
+      <!-- PROJECT 02 -->
+      <a href="#contact" class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <strong>02</strong>
+            PROJECT IMAGE
+            <span>이미지 삽입 공간</span>
+          </div>
+          <!--
+          <img src="이미지/project02.jpg" alt="TAMBURINS 프로젝트">
+          -->
+        </div>
 
-        <textarea rows="10" cols="60">내용</textarea>
+        <div class="project-info">
+          <div>
+            <h3>TAMBURINS</h3>
+            <p>BRAND IDENTITY · GRAPHIC DESIGN</p>
+          </div>
+          <span class="project-number">02 / 04</span>
+        </div>
+      </a>
 
-        <input onclick="alert('버튼클릭');" type="button" value="버튼입니다"/>
-        <button>
-            <strong>
-                <del>
-                    버튼입니다
-                </del>
-            </strong>
-        </button>
-    </form>
+      <!-- PROJECT 03 -->
+      <a href="#contact" class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <strong>03</strong>
+            PROJECT IMAGE
+            <span>이미지 삽입 공간</span>
+          </div>
+          <!--
+          <img src="이미지/project03.jpg" alt="Healing Home 프로젝트">
+          -->
+        </div>
 
-    </body>
-</htm1>
+        <div class="project-info">
+          <div>
+            <h3>Healing Home</h3>
+            <p>UI/UX · INTERACTION DESIGN</p>
+          </div>
+          <span class="project-number">03 / 04</span>
+        </div>
+      </a>
+
+      <!-- PROJECT 04 -->
+      <a href="#contact" class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <strong>04</strong>
+            PROJECT IMAGE
+            <span>이미지 삽입 공간</span>
+          </div>
+          <!--
+          <img src="이미지/project04.jpg" alt="개인 프로젝트">
+          -->
+        </div>
+
+        <div class="project-info">
+          <div>
+            <h3>Personal Project</h3>
+            <p>CREATIVE · VISUAL DESIGN</p>
+          </div>
+          <span class="project-number">04 / 04</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="container">
+
+    <p class="section-label">04 / WHAT I DO</p>
+
+    <h2 class="section-title">My Capabilities.</h2>
+
+    <p class="section-desc">
+      아이디어를 시각화하고 경험으로 완성하는 디자인 역량입니다.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <span class="number">01</span>
+        <h3>Graphic Design</h3>
+        <p>
+          시각적 요소를 활용한<br>
+          정보 전달과 표현
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <span class="number">02</span>
+        <h3>Branding</h3>
+        <p>
+          브랜드의 정체성과<br>
+          시각적 경험 설계
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <span class="number">03</span>
+        <h3>UI / UX</h3>
+        <p>
+          사용자 중심의<br>
+          인터페이스와 경험 디자인
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <span class="number">04</span>
+        <h3>Visual Design</h3>
+        <p>
+          다양한 매체를 활용한<br>
+          창의적인 시각 표현
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <p class="section-label">05 / GET IN TOUCH</p>
+
+    <h2 class="contact-title">
+      LET'S MAKE<br>
+      SOMETHING <span>NEW.</span>
+    </h2>
+
+    <p class="contact-description">
+      새로운 프로젝트와 다양한 협업을 기다리고 있습니다.<br>
+      프로젝트 및 기타 문의 사항이 있으시면 언제든 편하게 연락 주세요.
+    </p>
+
+    <div class="contact-list">
+
+      <a href="mailto:kimth8025@gmail.com" class="contact-item">
+        <span>EMAIL</span>
+        <span>kimth8025@gmail.com ↗</span>
+      </a>
+
+      <a href="tel:01044128052" class="contact-item">
+        <span>PHONE</span>
+        <span>010-4412-8052 ↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <p>© 2026 KIM TAEHYUN. ALL RIGHTS RESERVED.</p>
+    <p>DESIGNER PORTFOLIO</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuBtn.textContent =
+    navLinks.classList.contains('active') ? '×' : '☰';
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuBtn.textContent = '☰';
+  });
+});
+</script>
+
+</body>
+</html>
